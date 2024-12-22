@@ -78,7 +78,7 @@
     <section>
         <h2>R Studio Code</h2>
         <p>Here is a snippet of the R code used in my analysis:</p>
-        <div class="code">
+        <pre class="code">
             # Load necessary libraries
             library(randomForest)
             library(ggplot2)
@@ -159,7 +159,7 @@
               
               top_artist <- genre_data %>%
                 group_by(artists) %>%
-                summarise(avg_popularity = mean(popularity, na.rm = TRUE), song_count = n()) %>%  # 统计歌曲数量
+                summarise(avg_popularity = mean(popularity, na.rm = TRUE), song_count = n()) %>%  
                 arrange(desc(avg_popularity)) %>%
                 slice(1) 
               
@@ -179,14 +179,14 @@
             # Standarise Y axis
             ggplot(melted_data, aes(x = variable, y = value, fill = artists)) +
               geom_bar(stat = "identity", position = "dodge") +
-              facet_wrap(~ track_genre, nrow = 1, scales = "fixed") +  # 修改 scales 为 "fixed"
+              facet_wrap(~ track_genre, nrow = 1, scales = "fixed") +  
               theme_minimal() +
               labs(title = "Top Artists' Music Feature Profiles Across Genres (Unified Y-axis)",
                    x = "Features", y = "Value",
                    fill = "Artist") +
               theme(axis.text.x = element_text(angle = 45, hjust = 1),
                     plot.title = element_text(face = "bold", hjust = 0.5))
-        </div>
+        </pre>
     </section>
     <footer>
         <p>© 2025 [Your Name]. All rights reserved. Connect with me on <a href="your_linkedin_profile" style="color: white;">LinkedIn</a>.</p>
